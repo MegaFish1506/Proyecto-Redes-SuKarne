@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SuKarne - Calidad y Frescura</title>
+    <style>
+        /* CSS Clásico compatible con Cisco Packet Tracer Web Browser */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333333;
+        }
+
+        /* Encabezado Principal */
+        .header {
+            background-color: #C8102E; /* Rojo Institucional SuKarne */
+            color: #FFFFFF;
+            padding: 20px 10px;
+            text-align: center;
+            border-bottom: 4px solid #990011;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        /* Menú de Navegación */
+        .nav {
+            background-color: #333333;
+            text-align: center;
+        }
+
+        .nav a {
+            display: inline-block;
+            color: #FFFFFF;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .nav a:hover {
+            background-color: #C8102E;
+        }
+
+        /* Contenedor Principal */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border: 1px solid #DDDDDD;
+        }
+
+        /* Secciones de Contenido */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: #C8102E;
+            border-bottom: 2px solid #C8102E;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        /* Banner Promocional */
+        .banner {
+            background-color: #FFF3F3;
+            border: 1px solid #FFCDCD;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .banner h2 {
+            margin: 0 0 10px 0;
+            color: #C8102E;
+            font-size: 20px;
+        }
+
+        /* Cuadrícula Simple de Productos (compatible con tablas/bloques básicos) */
+        .product-grid {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .product-card {
+            background-color: #FAFAFA;
+            border: 1px solid #E0E0E0;
+            padding: 15px;
+            text-align: center;
+            vertical-align: top;
+            width: 30%;
+        }
+
+        .product-card h3 {
+            margin: 10px 0 5px 0;
+            color: #333333;
+            font-size: 16px;
+        }
+
+        .product-card .price {
+            color: #C8102E;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        /* Formulario de Contacto */
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 96%;
+            padding: 8px;
+            border: 1px solid #CCCCCC;
+            font-family: inherit;
+        }
+
+        .btn-submit {
+            background-color: #C8102E;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #990011;
+        }
+
+        /* Pie de Página */
+        .footer {
+            background-color: #222222;
+            color: #AAAAAA;
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con título principal -->
+    <div class="header">
+        <h1>SuKarne</h1>
+        <p>Calidad y Frescura en tu Mesa</p>
+    </div>
+
+    <!-- Menú de Navegación -->
+    <div class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        
+        <!-- Banner de Bienvenida -->
+        <div id="inicio" class="banner">
+            <h2>¡Bienvenidos al Servidor Web SuKarne!</h2>
+            <p>Líderes en la producción y comercialización de proteína animal de alta calidad.</p>
+        </div>
+
+        <!-- Sección de Productos Destacados -->
+        <div id="productos" class="section">
+            <h2 class="section-title">Cortes Destacados</h2>
+            <table class="product-grid" cellspacing="10">
+                <tr>
+                    <td class="product-card">
+                        <h3>Rib Eye</h3>
+                        <p>Corte jugoso de gran marmoleo y sabor premium.</p>
+                        <p class="price">$280.00 / kg</p>
+                    </td>
+                    <td class="product-card">
+                        <h3>Arrachera</h3>
+                        <p>Suave, marinada y lista para asar a la parrilla.</p>
+                        <p class="price">$220.00 / kg</p>
+                    </td>
+                    <td class="product-card">
+                        <h3>New York</h3>
+                        <p>Excelente textura, equilibrio de carne y grasa.</p>
+                        <p class="price">$250.00 / kg</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Sección Nosotros -->
+        <div id="nosotros" class="section">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <p>En <strong>SuKarne</strong> nos dedicamos a llevar la mejor carne a las familias. Garantizamos altos estándares de higiene, inocuidad y frescura en cada uno de nuestros procesos de distribución.</p>
+        </div>
+
+        <!-- Sección de Contacto -->
+        <div id="contacto" class="section">
+            <h2 class="section-title">Contacto y Ventas</h2>
+            <form action="#" method="get">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@sucursal.com">
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje o Pedido:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escriba su mensaje aquí..."></textarea>
+                </div>
+                <button type="button" class="btn-submit">Enviar Pedido</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Pie de Página -->
+    <div class="footer">
+        <p>&copy; 2026 SuKarne S.A. de C.V. - Servidor HTTP de Prueba (Cisco Packet Tracer)</p>
+    </div>
+
+</body>
+</html>
