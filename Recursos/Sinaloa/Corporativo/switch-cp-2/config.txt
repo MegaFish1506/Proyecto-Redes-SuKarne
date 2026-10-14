@@ -1,0 +1,7 @@
+hostname: Switch-Corporativo-2
+Contraseña modo priviligeado: #Tx8CT&HuY4Daq5S2kM@p!
+Contraseña de inicio: C&s$QKzn!oiiAMj7uB5^mc
+Contraseña vty: zH^x4%$scXoD3CZEu5844g
+vlan99: ip: 10.10.0.7
+default gateway: 10.10.0.1
+mascara de subred: 255.255.255.0
