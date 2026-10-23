@@ -1,1 +1,20 @@
-184.72.227.23
+Default gateway: 184.72.227.23
+mascara de subred: 255.255.255.0
+Servidor DHCP: 184.72.227.26
+Servidor DNS: 184.72.227.33
+Servidor WEB: 184.72.227.28
+Servidor FTP, TFTP, Email e IoT: 184.72.227.27
+
+VLAN 101 (SK_SERVIDORES): 
+Subred 184.72.227.0/24
+Gateway: 184.72.227.23
+Servidor DHCP: 184.72.227.26 | DNS: 184.72.227.33 | WEB: 184.72.227.28 | FTP/IoT: 184.72.227.27
+
+VLAN 205 (SK_OFICINAS):
+Subred 184.72.205.0/24
+Gateway: 184.72.205.1
+Pool DHCP para PCs: 184.72.205.50 en adelante
+
+VLAN 999 (SK_MGMT_NATIVE): 
+Subred 184.72.99.0/24 (Administración del Switch y Trunk Nativa)
+Gateway en L3: 184.72.99.1
