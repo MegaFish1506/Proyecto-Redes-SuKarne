@@ -1,3 +1,5 @@
+Corporativo/Datacenter
+
 Default gateway: 184.72.227.23
 mascara de subred: 255.255.255.0
 Servidor DHCP: 184.72.227.26
@@ -18,3 +20,9 @@ Pool DHCP para PCs: 184.72.205.50 en adelante
 VLAN 999 (SK_MGMT_NATIVE): 
 Subred 184.72.99.0/24 (Administración del Switch y Trunk Nativa)
 Gateway en L3: 184.72.99.1
+
+VLAN 500 (SK_IOT_WIRELESS):
+Subred IP: 184.72.50.0/24
+Gateway: 184.72.50.1
+SSID Oculto: SuKarne_IoT_Privado
+
