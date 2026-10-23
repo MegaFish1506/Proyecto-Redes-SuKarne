@@ -26,3 +26,4 @@ Subred IP: 184.72.50.0/24
 Gateway: 184.72.50.1
 SSID Oculto: SuKarne_IoT_Privado
 
+Ip WAN Router punto a punto: 184.72.254.0/30
