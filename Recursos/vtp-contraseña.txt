@@ -1,0 +1,15 @@
+Contraseñas de VTP en Switches de Capa 3:
+
+Corporativo/Data Center:
+Perros.1707
+
+Tienda SuKarne Culiacan:
+Santiago.Lizarraga1987
+
+UGI Durango:
+GatosAracnidos.7678
+
+Tienda SuKarne Michoacan:
+Masacote.67
+
+
