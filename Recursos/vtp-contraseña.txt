@@ -12,4 +12,5 @@ GatosAracnidos.7678
 Tienda SuKarne Michoacan:
 Masacote.67
 
-
+Planta Produccion Michoacan:
+Casimiro.Olvera1999
