@@ -1,0 +1,153 @@
+====================================================================================================
+PROYECTO DE ADMINISTRACIÓN DE REDES - UAS FIC (SEMESTRE 3)
+EMPRESA: SuKarne S.A. de C.V.
+DOCUMENTO: TABLA GENERAL DE DIRECCIONAMIENTO IP Y PARÁMETROS WAN/LAN (AVANCE 2)
+ARQUITECTURA: Router-on-a-Stick (802.1Q), VTP (Server/Client/Transp), OSPF Área 0 (Topología en Anillo)
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+1. DATA CENTER CORPORATIVO (LA PRIMAVERA, CULIACÁN, SINALOA)
+   Router ID OSPF: 1.1.1.1
+----------------------------------------------------------------------------------------------------
+[ Router-LaPrimavera ]
+- Interface Gi0/0.101 (VLAN 101 - Servidores Centrales):  184.72.227.23 / 255.255.255.0
+- Interface Gi0/0.205 (VLAN 205 - Oficinas Corporativo): 184.72.205.1  / 255.255.255.0
+- Interface Gi0/0.500 (VLAN 500 - IoT Wireless Privado): 184.72.50.1   / 255.255.255.0
+- Interface Gi0/0.999 (VLAN 999 - Gestión y Nativa):     184.72.99.1   / 255.255.255.0
+
+[ Rack de Servidores Centrales (VLAN 101) ]
+- Servidor DNS:                    184.72.227.33 / 255.255.255.0 | Gateway: 184.72.227.23
+- Servidor WEB:                    184.72.227.28 / 255.255.255.0 | Gateway: 184.72.227.23
+- Servidor FTP / TFTP / Email / IoT: 184.72.227.27 / 255.255.255.0 | Gateway: 184.72.227.23
+
+[ Pools DHCP Locales en Router ]
+- Pool_DC_Oficinas (VLAN 205):     Subred 184.72.205.0/24 | Rango: .50 a .254 | GW: 184.72.205.1
+- Pool_DC_IoT (VLAN 500):          Subred 184.72.50.0/24  | Rango: .50 a .254 | GW: 184.72.50.1
+
+[ Infraestructura de Switches L3/L2 ]
+- SW-DC-3 (L3 / VTP Server):       IP Gestión: 184.72.99.2 / 255.255.255.0 | GW: 184.72.99.1
+- SW-DC-1 (L2 / VTP Client):       IP Gestión: 184.72.99.3 / 255.255.255.0 | GW: 184.72.99.1
+- SW-DC-2 (L2 / VTP Transparent):  IP Gestión: 184.72.99.4 / 255.255.255.0 | GW: 184.72.99.1
+* Dominio VTP: SuKarne | Clave: cisco | SSID IoT: SuKarne_IoT_Privado
+
+
+----------------------------------------------------------------------------------------------------
+2. SUCURSAL 1: MICHOACÁN
+   Router ID OSPF: 2.2.2.2
+----------------------------------------------------------------------------------------------------
+[ Router-Michoacan ]
+- Interface Gi0/0.110 (VLAN 110 - Ventas y Cajas):      184.72.10.1 / 255.255.255.0
+- Interface Gi0/0.120 (VLAN 120 - Oficinas Local):       184.72.11.1 / 255.255.255.0
+- Interface Gi0/0.130 (VLAN 130 - Admin y Wi-Fi):       184.72.12.1 / 255.255.255.0
+- Interface Gi0/0.999 (VLAN 999 - Gestión y Nativa):     184.72.19.1 / 255.255.255.0
+
+[ Pools DHCP Locales en Router ]
+- Pool_MICH_Ventas (VLAN 110):     Subred 184.72.10.0/24 | Rango: .50 a .254 | GW: 184.72.10.1
+- Pool_MICH_Oficinas (VLAN 120):   Subred 184.72.11.0/24 | Rango: .50 a .254 | GW: 184.72.11.1
+- Pool_MICH_Admin_WiFi (VLAN 130): Subred 184.72.12.0/24 | Rango: .50 a .254 | GW: 184.72.12.1
+
+[ Infraestructura de Switches L3/L2 ]
+- SW-MICH-3 (L3 / VTP Server):     IP Gestión: 184.72.19.2 / 255.255.255.0 | GW: 184.72.19.1
+- SW-MICH-1 (L2 / VTP Client):     IP Gestión: 184.72.19.3 / 255.255.255.0 | GW: 184.72.19.1
+- SW-MICH-2 (L2 / VTP Client):     IP Gestión: 184.72.19.4 / 255.255.255.0 | GW: 184.72.19.1
+* Dominio VTP: SuKarne | Clave VTP: Masacote.67 | SSID Wi-Fi: SuKarne_Michoacan
+
+
+----------------------------------------------------------------------------------------------------
+3. SUCURSAL 2: EXPRESS CULIACÁN
+   Router ID OSPF: 3.3.3.3
+----------------------------------------------------------------------------------------------------
+[ Router-Culiacan ]
+- Interface Gi0/0.310 (VLAN 310 - Ventas y Cajas):      184.72.20.1 / 255.255.255.0
+- Interface Gi0/0.320 (VLAN 320 - Oficinas Local):       184.72.21.1 / 255.255.255.0
+- Interface Gi0/0.330 (VLAN 330 - Admin y Wi-Fi):       184.72.22.1 / 255.255.255.0
+- Interface Gi0/0.999 (VLAN 999 - Gestión y Nativa):     184.72.29.1 / 255.255.255.0
+
+[ Pools DHCP Locales en Router ]
+- Pool_CUL_Ventas (VLAN 310):      Subred 184.72.20.0/24 | Rango: .50 a .254 | GW: 184.72.20.1
+- Pool_CUL_Oficinas (VLAN 320):    Subred 184.72.21.0/24 | Rango: .50 a .254 | GW: 184.72.21.1
+- Pool_CUL_Admin_WiFi (VLAN 330):  Subred 184.72.22.0/24 | Rango: .50 a .254 | GW: 184.72.22.1
+
+[ Infraestructura de Switches L3/L2 ]
+- SW-CUL-3 (L3 / VTP Server):      IP Gestión: 184.72.29.2 / 255.255.255.0 | GW: 184.72.29.1
+- SW-CUL-1 (L2 / VTP Client):      IP Gestión: 184.72.29.3 / 255.255.255.0 | GW: 184.72.29.1
+- SW-CUL-2 (L2 / VTP Client):      IP Gestión: 184.72.29.4 / 255.255.255.0 | GW: 184.72.29.1
+* Dominio VTP: SuKarne_CUL | Clave VTP: cisco | SSID Wi-Fi: SuKarne_Culiacan
+
+
+----------------------------------------------------------------------------------------------------
+4. SUCURSAL 3: UGI DURANGO
+   Router ID OSPF: 4.4.4.4
+----------------------------------------------------------------------------------------------------
+[ Router-UGI ]
+- Interface Gi0/0.410 (VLAN 410 - Ventas y Cajas):      184.72.30.1 / 255.255.255.0
+- Interface Gi0/0.420 (VLAN 420 - Oficinas Local):       184.72.31.1 / 255.255.255.0
+- Interface Gi0/0.430 (VLAN 430 - Admin y Wi-Fi):       184.72.32.1 / 255.255.255.0
+- Interface Gi0/0.999 (VLAN 999 - Gestión y Nativa):     184.72.39.1 / 255.255.255.0
+
+[ Pools DHCP Locales en Router ]
+- Pool_UGI_Ventas (VLAN 410):      Subred 184.72.30.0/24 | Rango: .50 a .254 | GW: 184.72.30.1
+- Pool_UGI_Oficinas (VLAN 420):    Subred 184.72.31.0/24 | Rango: .50 a .254 | GW: 184.72.31.1
+- Pool_UGI_Admin_WiFi (VLAN 430):  Subred 184.72.32.0/24 | Rango: .50 a .254 | GW: 184.72.32.1
+
+[ Infraestructura de Switches L3/L2 ]
+- SW-UGI-3 (L3 / VTP Server):      IP Gestión: 184.72.39.2 / 255.255.255.0 | GW: 184.72.39.1
+- SW-UGI-1 (L2 / VTP Client):      IP Gestión: 184.72.39.3 / 255.255.255.0 | GW: 184.72.39.1
+- SW-UGI-2 (L2 / VTP Client):      IP Gestión: 184.72.39.4 / 255.255.255.0 | GW: 184.72.39.1
+* Dominio VTP: SuKarne | Clave VTP: GatosAracnidos.7678 | SSID Wi-Fi: SuKarne_UGI
+
+
+----------------------------------------------------------------------------------------------------
+5. SUCURSAL 4: PLANTA DE PRODUCCIÓN MICHOACÁN
+   Router ID OSPF: 5.5.5.5
+----------------------------------------------------------------------------------------------------
+[ Router-Planta ]
+- Interface Gi0/0.510 (VLAN 510 - Operación / Básculas): 184.72.40.1 / 255.255.255.0
+- Interface Gi0/0.520 (VLAN 520 - Oficinas Planta):     184.72.41.1 / 255.255.255.0
+- Interface Gi0/0.530 (VLAN 530 - Admin y Wi-Fi):       184.72.42.1 / 255.255.255.0
+- Interface Gi0/0.999 (VLAN 999 - Gestión y Nativa):     184.72.49.1 / 255.255.255.0
+
+[ Pools DHCP Locales en Router ]
+- Pool_PLT_Operacion (VLAN 510):   Subred 184.72.40.0/24 | Rango: .50 a .254 | GW: 184.72.40.1
+- Pool_PLT_Oficinas (VLAN 520):    Subred 184.72.41.0/24 | Rango: .50 a .254 | GW: 184.72.41.1
+- Pool_PLT_Admin_WiFi (VLAN 530):  Subred 184.72.42.0/24 | Rango: .50 a .254 | GW: 184.72.42.1
+
+[ Infraestructura de Switches L3/L2 ]
+- SW-PLT-3 (L3 / VTP Server):      IP Gestión: 184.72.49.2 / 255.255.255.0 | GW: 184.72.49.1
+- SW-PLT-1 (L2 / VTP Client):      IP Gestión: 184.72.49.3 / 255.255.255.0 | GW: 184.72.49.1
+- SW-PLT-2 (L2 / VTP Client):      IP Gestión: 184.72.49.4 / 255.255.255.0 | GW: 184.72.49.1
+* Dominio VTP: SuKarne | Clave VTP: Produccion.2026 | SSID Wi-Fi: SuKarne_Planta
+
+
+----------------------------------------------------------------------------------------------------
+6. ENLACES WAN SERIALES PUNTO A PUNTO (TOPOLOGÍA EN ANILLO - OSPF ÁREA 0)
+   Máscara de subred WAN: 255.255.255.252 (/30)
+----------------------------------------------------------------------------------------------------
++------------------------------------+------------------+-----------------------+-----------------------+
+| Tramo WAN Serial (Anillo)          | Subred WAN       | Router Origen (IP/Port)| Router Destino(IP/Port)|
++------------------------------------+------------------+-----------------------+-----------------------+
+| 1. La Primavera <-> Culiacán       | 184.72.254.0/30  | Router-LaPrimavera    | Router-Culiacan       |
+|                                    |                  | Se0/0/0: 184.72.254.1 | Se0/0/0: 184.72.254.2 |
++------------------------------------+------------------+-----------------------+-----------------------+
+| 2. Culiacán <-> UGI Durango        | 184.72.254.4/30  | Router-Culiacan       | Router-UGI            |
+|                                    |                  | Se0/0/1: 184.72.254.5 | Se0/0/0: 184.72.254.6 |
++------------------------------------+------------------+-----------------------+-----------------------+
+| 3. UGI Durango <-> Planta Prod.    | 184.72.254.8/30  | Router-UGI            | Router-Planta         |
+|                                    |                  | Se0/0/1: 184.72.254.9 | Se0/0/0: 184.72.254.10|
++------------------------------------+------------------+-----------------------+-----------------------+
+| 4. Planta Prod. <-> Michoacán      | 184.72.254.12/30 | Router-Planta         | Router-Michoacan      |
+|                                    |                  | Se0/0/1: 184.72.254.13| Se0/0/0: 184.72.254.14|
++------------------------------------+------------------+-----------------------+-----------------------+
+| 5. Michoacán <-> La Primavera      | 184.72.254.16/30 | Router-Michoacan      | Router-LaPrimavera    |
+| (Cierre del Anillo WAN)            |                  | Se0/0/1: 184.72.254.17| Se0/0/1: 184.72.254.18|
++------------------------------------+------------------+-----------------------+-----------------------+
+
+----------------------------------------------------------------------------------------------------
+7. CREDENCIALES Y PARÁMETROS DE SEGURIDAD ESTÁNDAR
+----------------------------------------------------------------------------------------------------
+- Secret / Modo Privilegiado: class
+- Line Console 0 Password:     cisco
+- Line VTY (0-4 / 0-15):       cisco
+- WPA2 Passphrase Wi-Fi:       sukarne2026
+- Servidor DNS Global:         184.72.227.33 (Apunta a Servidor DNS Central en La Primavera)
+====================================================================================================
